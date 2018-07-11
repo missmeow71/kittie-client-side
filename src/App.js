@@ -6,6 +6,8 @@ import CatCard from './components/CatCard'
 import Footer from './components/Footer'
 import Splash from './components/Splash'
 
+const catUrl = "https://kitties-server-side.herokuapp.com/api/v1/kittie"
+
 class App extends Component {
 
   constructor(props) {
@@ -48,9 +50,9 @@ componentDidUpdate() {
           "content-type": "application/json"
         }),
         body: JSON.stringify({
-          dogName: this.state.catName,
-          comment: this.state.comment,
           imgURL: this.state.imgURL,
+          catName: this.state.catName,
+          comment: this.state.comment,
           rating: this.state.rating
         })
       })
@@ -74,7 +76,7 @@ componentDidUpdate() {
    handleDelete = (event) => {
      event.preventDefault()
      console.log('clicked')
-     alert("YOU MONSTER")
+     alert("Hissssssss")
      let deleteURL = catURL + event.target.name
      fetch(deleteURL, {
        method: "DELETE",
