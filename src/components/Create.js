@@ -11,6 +11,7 @@ class Create extends Component {
 
     render() {
         return ( 
+            
             <Modal trigger={<Button onClick={this.handleOpen}>Upload Your Kittie</Button>}
                 open={this.state.modalOpen}
                 onClose={this.handleClose}
@@ -20,17 +21,21 @@ class Create extends Component {
                      <h3>Add a Meow Meow</h3> 
                         <form id='form'onSubmit={this.props.handleSubmit}>
                             <label>
-
-                            <Input name='catName' placeholder='Cat Name' type="text" value={this.props.catNameon} Change={this.props.handleChange} /> 
+                                Name
+                            <Input name='catName' placeholder='Cat Name' type="text" value={this.props.catNameon} onChange={this.props.handleChange} /> 
                             </label> 
                             <label>
-
+                                Comment
                             <Input name='comment' placeholder='Comment' type="text" value={this.props.comment} onChange={this.props.handleChange} /> 
                             </label> 
                             <label>
-
+                                Image
                             <Input name='imgURL'placeholder='Image' type="text" value={this.props.imgURL} onChange={this.props.handleChange} /> 
-                            </label> 
+                            </label>
+                             <label>
+                                Rating
+                            <Input name='rating'placeholder='Rating' type="text" value={this.props.rating} onChange={this.props.handleChange} /> 
+                            </label>
                             <Button type="submit" value="Submit">Submit</Button> 
                         </form> 
                 </Modal.Actions> 
@@ -44,4 +49,4 @@ class Create extends Component {
 
 
 
-    export default Create;
+    export default Create

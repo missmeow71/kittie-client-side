@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+ import {Link} from 'react-router-dom'
 
 class Splash extends Component {
     render() {
@@ -13,12 +13,12 @@ class Splash extends Component {
                        You can even upvote your favorites! 
                     </p>
 
-                    <Link className="goto" to="/CatCard">
-                        < button className="enter">
+                    <Link className="goto" to="/CatCard"> 
+                         < button className="enter">
                             MEOW!</button>
                     </Link>
 
-                </section>
+                </section> 
             </div>
         );
     }

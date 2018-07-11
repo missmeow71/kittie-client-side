@@ -5,11 +5,12 @@ import {Card, Image} from 'semantic-ui-react'
 class CatCard extends Component {
 
     render() {
+        console.log ('CARDPROPS', this.props)
         var cats = this.props.data.map(cat => {
             return ( 
             <Card key={cat.id}>
-                <Image src={cat.imgURL} /> 
                 <Card.Content>
+                <img src={cat.imgUrl} /> 
                     <Card.Header> 
                         {cat.catName} 
                     </Card.Header> 

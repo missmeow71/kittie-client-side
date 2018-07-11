@@ -6,7 +6,8 @@ import CatCard from './components/CatCard'
 import Footer from './components/Footer'
 import Splash from './components/Splash'
 
-const catUrl = "https://kitties-server-side.herokuapp.com/api/v1/kittie"
+// const catURL = "https://kitties-server-side.herokuapp.com/api/v1/kittie"
+const catURL = "http://localhost:3000/api/v1/kittie"
 
 class App extends Component {
 
@@ -18,47 +19,47 @@ class App extends Component {
       comment: '',
       imgURL: '',
       rating: 10,
-      updateFeed: false
+      isDataLoaded: false
     }
   }
 
-componentDidMount() {
-  fetch(catURL)
-    .then(response => response.json())
-    .then(data =>
-      this.setState({
-        data: data.cats,
-      })
-    )
-}
+  componentDidMount() {
+    this.getAllCats()
+  }
 
-componentDidUpdate() {
-  fetch(catURL)
-    .then(res => res.json())
-    .then(data =>
-      this.setState({
-        data: data.cats
+  componentDidUpdate() {
+
+  }
+
+  getAllCats = () => {
+    fetch(catURL)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          data: data,
+          isDataLoaded: true
+        })
       })
-    )
-}
+  }
 
   handleSubmit = (event) => {
     event.preventDefault()
+    var cat = {
+          imgUrl: this.state.imgURL,
+          catName: this.state.catName,
+          comment: this.state.comment,
+          rating: this.state.rating
+        }
     fetch(catURL, {
         method: "POST",
         headers: new Headers({
           "content-type": "application/json"
         }),
-        body: JSON.stringify({
-          imgURL: this.state.imgURL,
-          catName: this.state.catName,
-          comment: this.state.comment,
-          rating: this.state.rating
-        })
+        body: JSON.stringify(cat)
       })
       .then(response => response.json())
       .then(entry => {
-        console.log(entry)
+        this.getAllCats()
       })
       .then(
         document.getElementById('form').reset()
@@ -75,15 +76,17 @@ componentDidUpdate() {
 
    handleDelete = (event) => {
      event.preventDefault()
-     console.log('clicked')
-     alert("Hissssssss")
-     let deleteURL = catURL + event.target.name
+     let deleteURL = catURL + '/' + event.target.name
+     console.log(deleteURL)
      fetch(deleteURL, {
        method: "DELETE",
        headers: new Headers({
          "content-type": "application/json"
        })
-     })
+     }).then(response => response.json())
+       .then(entry => {
+         this.getAllCats()
+       })
    }
 
     upVote = (event) => {
@@ -107,10 +110,10 @@ componentDidUpdate() {
       <div className="App">
      <Header />
       <Create handleChange={this.handleChange} handleSubmit={this.handleSubmit} />   
-      <CatCard handleDelete ={this.handleDelete} upVote={this.upVote} data={this.state.data} />
+      {this.state.isDataLoaded && <CatCard handleDelete ={this.handleDelete} upVote={this.upVote} data={this.state.data} />}
+      <Footer />
       </div>
-    );
-    <Footer />
+    )
   }
 }
 
