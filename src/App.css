@@ -1,6 +1,6 @@
 #logo {
-  height: 250px;
-  width: 250px;
+  height: 300px;
+  width: 300px;
 }
 
 header {
@@ -9,77 +9,23 @@ header {
   background-color: white;
 }
 
-.app {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.background-img {
-  background: linear-gradient(rgba(158, 17, 17, 0.2), rgba(158, 17, 17, 0.2)), url("cats-background-bw.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 100%;
-}
-
-.intro {
-  width: 44%;
-  height: 25rem;
-  font-size: 24px;
-  margin: 0 auto;
-  color: black;
-  padding: 15%;
-}
-
-.enter {
-  display: flex;
-  justify-content: center;
-  width: 40%;
-  height: 5rem;
-  font-size: 20px;
-  background-color: dimgray;
-  color: white;
-  text-shadow: 0 0 0.1em #070101, 0 0 0.1em #070101;
-  margin: 0 auto;
-}
-
-.goto {
-  color: white;
-  text-decoration: none;
-}
-
-.subtitle {
-  display: flex;
-  justify-content: center;
-}
-
 .catContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-footer {
-  position: fixed;
-  width: 100%;
-  height: 25px;
-  background-color: white;
-  color: black;
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('./cats-background-bw.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .ui.button {
   background-color: black;
   color: white;
-}
-
-.home-atag {
-  margin: 0;
-  background-color: #ffff;
-  padding: 0.6vmax 3.2vmax;
-}
-
-.cat-atag {
-  background-color: #ffff;
-  padding: 0.6vmax 3.6vmax;
 }

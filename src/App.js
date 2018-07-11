@@ -6,8 +6,8 @@ import CatCard from './components/CatCard'
 import Footer from './components/Footer'
 import Splash from './components/Splash'
 
-// const catURL = "https://kitties-server-side.herokuapp.com/api/v1/kittie"
-const catURL = "http://localhost:3000/api/v1/kittie"
+const catURL = "https://kitties-server-side.herokuapp.com/api/v1/kittie"
+// const catURL = "http://localhost:3000/api/v1/kittie"
 
 class App extends Component {
 
