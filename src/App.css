@@ -19,7 +19,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url('./cats-background-bw.jpg');
+  background-image: url('http://gdj.graphicdesignjunction.com/wp-content/uploads/2014/05/0054+background+pattern+designs.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -27,5 +27,41 @@ header {
 
 .ui.button {
   background-color: black;
+  color: hotpink;
+}
+
+.welcome {
+  width: 44%;
+  height: 25rem;
+  font-size: 24px;
+  margin: 0 auto;
   color: white;
+  padding: 15%;
+}
+
+.enter {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  height: 5rem;
+  font-size: 20px;
+  background-color: hotpink;
+  color: white;
+  text-shadow: 0 0 0.1em #070101, 0 0 0.1em #070101;
+  margin: 0 auto;
+}
+
+.goto {
+  color: white;
+  text-decoration: none;
+}
+
+.subtitle {
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+   background-color: black;
+   color: hotpink;
 }

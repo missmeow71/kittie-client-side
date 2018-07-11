@@ -21,19 +21,15 @@ class Create extends Component {
                      <h3>Add a Meow Meow</h3> 
                         <form id='form'onSubmit={this.props.handleSubmit}>
                             <label>
-                                Name
                             <Input name='catName' placeholder='Cat Name' type="text" value={this.props.catNameon} onChange={this.props.handleChange} /> 
                             </label> 
                             <label>
-                                Comment
                             <Input name='comment' placeholder='Comment' type="text" value={this.props.comment} onChange={this.props.handleChange} /> 
                             </label> 
                             <label>
-                                Image
                             <Input name='imgURL'placeholder='Image' type="text" value={this.props.imgURL} onChange={this.props.handleChange} /> 
                             </label>
                              <label>
-                                Rating
                             <Input name='rating'placeholder='Rating' type="text" value={this.props.rating} onChange={this.props.handleChange} /> 
                             </label>
                             <Button type="submit" value="Submit">Submit</Button> 

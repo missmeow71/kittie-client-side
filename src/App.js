@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {BrowserRouter as Router,Route} from 'react-router-dom'
 import './App.css';
 import Header from './components/Header'
 import Create from './components/Create'
@@ -107,12 +108,17 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
+        <React.Fragment>
+          <Route className="header" path="/" component={Header} />
       <div className="App">
-     <Header />
+      <Route exact path="/" component={Splash} />
       <Create handleChange={this.handleChange} handleSubmit={this.handleSubmit} />   
       {this.state.isDataLoaded && <CatCard handleDelete ={this.handleDelete} upVote={this.upVote} data={this.state.data} />}
       <Footer />
       </div>
+        </React.Fragment>
+      </Router>
     )
   }
 }
