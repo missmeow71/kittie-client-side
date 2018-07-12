@@ -7,7 +7,7 @@ class Splash extends Component {
             <div>
                 <section className="intro">
                     <h1 className="subtitle">Show Me Your Kitties!</h1>
-                    <p>Welcome to Show Me Your Kitties! The app where you can view and add images and comments of your fabulous felines! 
+                    <p className="description">Welcome to Show Me Your Kitties! The app where you can view and add images and comments of your fabulous felines! 
                        You can even upvote your favorites! 
                     </p>
                     <Link className="goto" to="/CatCard"> 

@@ -8,7 +8,6 @@ import Footer from './components/Footer'
 import Splash from './components/Splash'
 
 const catURL = "https://kitties-server-side.herokuapp.com/api/v1/kittie"
-// const catURL = "http://localhost:3000/api/v1/kittie"
 
 class App extends Component {
 
@@ -112,10 +111,10 @@ class App extends Component {
         <React.Fragment>
         <Route className="header" path="/" component={Header} />
         <Create handleChange = {this.handleChange} handleSubmit = {this.handleSubmit}/>
-        {this.state.isDataLoaded && <Route path="/catCard" component={CatCard}/>}
       <div className="App">
       <Switch>
         <Route exact path="/" component={Splash} />
+        {/* {this.state.isDataLoaded && <Route path="/catCard" component={CatCard}/>} */}
         <Route path="/catCard" component={() => <CatCard handleDelete ={this.handleDelete} upVote={this.upVote} data={this.state.data} />} />
       </Switch>
       <Footer />
