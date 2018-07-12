@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router,Route} from 'react-router-dom'
+import {BrowserRouter as Router,Route, Switch} from 'react-router-dom'
 import './App.css';
 import Header from './components/Header'
 import Create from './components/Create'
@@ -110,11 +110,14 @@ class App extends Component {
     return (
       <Router>
         <React.Fragment>
-          <Route className="header" path="/" component={Header} />
+        <Route className="header" path="/" component={Header} />
+        <Create handleChange = {this.handleChange} handleSubmit = {this.handleSubmit}/>
+        {this.state.isDataLoaded && <Route path="/catCard" component={CatCard}/>}
       <div className="App">
-      <Route exact path="/" component={Splash} />
-      <Create handleChange={this.handleChange} handleSubmit={this.handleSubmit} />   
-      {this.state.isDataLoaded && <CatCard handleDelete ={this.handleDelete} upVote={this.upVote} data={this.state.data} />}
+      <Switch>
+        <Route exact path="/" component={Splash} />
+        <Route path="/catCard" component={() => <CatCard handleDelete ={this.handleDelete} upVote={this.upVote} data={this.state.data} />} />
+      </Switch>
       <Footer />
       </div>
         </React.Fragment>

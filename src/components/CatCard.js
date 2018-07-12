@@ -30,6 +30,7 @@ class CatCard extends Component {
             })
 
             return ( 
+                
                 <div className='catContainer'> 
                     {cats} 
                 </div>
