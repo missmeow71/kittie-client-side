@@ -6,6 +6,7 @@ import Create from './components/Create'
 import CatCard from './components/CatCard'
 import Footer from './components/Footer'
 import Splash from './components/Splash'
+import Donate from './components/Donate'
 
 const catURL = "https://kitties-server-side.herokuapp.com/api/v1/kittie"
 
@@ -21,7 +22,7 @@ class App extends Component {
       rating: 10,
       isDataLoaded: false
     }
-  }
+  } 
 
   componentDidMount() {
     this.getAllCats()
@@ -114,7 +115,6 @@ class App extends Component {
       <div className="App">
       <Switch>
         <Route exact path="/" component={Splash} />
-        {/* {this.state.isDataLoaded && <Route path="/catCard" component={CatCard}/>} */}
         <Route path="/catCard" component={() => <CatCard handleDelete ={this.handleDelete} upVote={this.upVote} data={this.state.data} />} />
       </Switch>
       <Footer />

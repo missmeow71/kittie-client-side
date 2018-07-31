@@ -21,16 +21,15 @@ class CatCard extends Component {
                 <Card.Content extra>
                 <div className='upVote'>
                 <p>{cat.rating}/10</p>
-                <button value={cat.rating} name={cat.id} onClick={this.props.upVote}>&uarr; vote</button> 
+                    <button value={cat.rating} name={cat.id} onClick={this.props.upVote}>&uarr; vote</button> 
                 </div> 
-                <button name={cat.id} onClick={this.props.handleDelete}>Delete</button> 
+                    <button name={cat.id} onClick={this.props.handleDelete}>Delete</button> 
                 </Card.Content> 
             </Card>
             )
             })
 
             return ( 
-                
                 <div className='catContainer'> 
                     {cats} 
                 </div>
