@@ -1,6 +1,6 @@
 #logo {
-  height: 220px;
-  width: 220px;
+  height: 210px;
+  width: 210px;
 }
 
 header {
@@ -19,13 +19,16 @@ header {
 .navbut {
    flex-direction: row;
    justify-content: center;
-   width: 4%;
-   height: 1.5rem;
+   width: 5%;
+   height: 1.5vw;
    margin: 0;
    padding: 0;
 }
 
 .button-style {
+  display: flex;
+  justify-content: center;
+  height: 1.3vw;
   text-decoration: none;
   background-color: black;
   color: hotpink;
